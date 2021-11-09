@@ -92,7 +92,7 @@ jobs:
         cd Services/Ordering/Ordering.API
         dotnet build --no-restore -p:UseSharedCompilation=false
         cd -
-        cd ervices/Catalog/Catalog.API
+        cd Services/Catalog/Catalog.API
         dotnet build --no-restore -p:UseSharedCompilation=false     
 
     # ℹ️ Command-line programs to run using the OS shell.
