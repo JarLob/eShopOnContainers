@@ -11,7 +11,7 @@ on:
 
 jobs:
   compare:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     outputs:
       result: ${{ steps.compare-commits.outputs.result }}
 
