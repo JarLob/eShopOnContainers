@@ -93,7 +93,7 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.1.1
+      uses: microsoft/setup-msbuild@fbf0ccc42ae8240715effb71c19848044a69af0d
     - run: |
         nuget restore src/eShopOnContainers-ServicesAndWebApps.sln
         msbuild src/eShopOnContainers-ServicesAndWebApps.sln /p:UseSharedCompilation=false
