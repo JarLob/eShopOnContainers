@@ -71,14 +71,23 @@ jobs:
         git config --global user.name "Octokit"
         git fetch upstream || exit 1
         git rebase ${{ fromJSON(needs.compare.outputs.result).sha }} || exit 1
+        
+    - name: Setup .NET Core 5.0 on ${{ matrix.os }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.*
 
     - uses: github/codeql-action/init@v1
       with:
         languages: ${{ matrix.language }}
         config-file: ./.github/codeql-config.yml
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+    #- name: Autobuild
+    #  uses: github/codeql-action/autobuild@v1
+    
+    - name: Build
+      run: |
+        dotnet build --configuration Release --framework net5.0 -p:UseSharedCompilation=false
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
