@@ -89,7 +89,11 @@ jobs:
       run: |
         cd src
         dotnet restore eShopOnContainers-ServicesAndWebApps.sln
-        dotnet build eShopOnContainers-ServicesAndWebApps.sln --no-restore -p:UseSharedCompilation=false
+        cd Services/Ordering/Ordering.API
+        dotnet build --no-restore -p:UseSharedCompilation=false
+        cd -
+        cd ervices/Catalog/Catalog.API
+        dotnet build --no-restore -p:UseSharedCompilation=false     
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
