@@ -92,11 +92,11 @@ jobs:
     # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
-    #- name: Add msbuild to PATH
-    #  uses: microsoft/setup-msbuild@v1.0.1
-    #- run: |
-    #    nuget restore name.sln
-    #    msbuild name.sln /p:UseSharedCompilation=false
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.1
+    - run: |
+        nuget restore src/eShopOnContainers-ServicesAndWebApps.sln
+        msbuild src/eShopOnContainers-ServicesAndWebApps.sln /p:UseSharedCompilation=false
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
