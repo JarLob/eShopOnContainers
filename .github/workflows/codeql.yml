@@ -87,7 +87,7 @@ jobs:
     
     - name: Build
       run: |
-        dotnet build --configuration Release --framework net5.0 -p:UseSharedCompilation=false
+        dotnet build src/eShopOnContainers-ServicesAndWebApps.sln --configuration Release --framework net5.0 -p:UseSharedCompilation=false
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
